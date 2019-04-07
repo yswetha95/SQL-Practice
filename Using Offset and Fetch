@@ -1,0 +1,5 @@
+SELECT First_Name, Last_Name
+FROM Employee
+ORDER BY Salary
+OFFSET 2 ROWS
+FETCH NEXT 4 ROWS ONLY;
