@@ -1,0 +1,14 @@
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  RETURN (
+      # Write your MySQL query statement below.
+      
+
+       (select  min(a.salary) as m from 
+            (select distinct(salary) from employee
+            order by salary desc
+            limit N ) as a
+       having count(a.salary) >= N)
+     
+  );
+END
